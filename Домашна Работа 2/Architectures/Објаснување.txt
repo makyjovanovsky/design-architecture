@@ -1,0 +1,25 @@
+WebApp UI
+	Display map
+	Display gas stations
+	Display additional information on gas stations
+Controller
+	Central controller for getting all requests
+	Dispatching the request to appropriate controller
+Login Controller
+	Processing requests for logging
+Register Controller
+	Processing requests for registering
+SearchGasStation Controller
+	Processing requests for gas stations
+Register Service
+	Business logic for registering
+Login Service
+	Business logic for logging
+Search Service
+	Bussiness logic for gas stations
+Register Repository
+	Store data in database(for user that is trying to register)
+Login Repository
+	Retrieve data from database(for user that is trying to login)
+Search Repository
+	Retrieve/update data from/to database(for gas stations)

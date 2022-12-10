@@ -5,6 +5,11 @@ import com.example.springapp.repository.GasStationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Service
 public class GasStationService {
 
@@ -17,5 +22,14 @@ public class GasStationService {
 
     public void saveGasStation(GasStationEntity gasStationEntity) {
         gasStationRepository.save(gasStationEntity);
+    }
+
+    public List<String> getAllStations() {
+        List<GasStationEntity> list = gasStationRepository.findAll();
+        Set<String> set = new HashSet<>();
+        for (GasStationEntity g : list) {
+            set.add(g.getCity());
+        }
+        return new ArrayList<>(set);
     }
 }
