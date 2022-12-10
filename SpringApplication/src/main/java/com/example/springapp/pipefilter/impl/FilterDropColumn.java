@@ -10,7 +10,7 @@ public class FilterDropColumn implements Filter<String> {
         String working_hours = input.split(",")[2];
         String location = input.split(",")[3];
         String phone_number = input.split(",")[4];
-
-        return name + "|" + location + "|" + working_hours + "|" + phone_number;
+        String city = input.split(",")[0];
+        return name + "|" + location + "|" + working_hours + "|" + phone_number + "|" + city;
     }
 }

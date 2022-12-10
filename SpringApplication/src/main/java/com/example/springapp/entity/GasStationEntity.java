@@ -1,6 +1,7 @@
 package com.example.springapp.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "gas_stations")
@@ -21,11 +22,15 @@ public class GasStationEntity {
     @Column(name = "phone_number",nullable = false)
     private String phone_number;
 
-    public GasStationEntity(String name, String location, String working_hours, String phone_number) {
+    @Column(name = "city",nullable = false)
+    private String city;
+
+    public GasStationEntity(String name, String location, String working_hours, String phone_number,String city) {
         this.name = name;
         this.location = location;
         this.working_hours = working_hours;
         this.phone_number = phone_number;
+        this.city = city;
     }
 
     public GasStationEntity() {
@@ -47,4 +52,14 @@ public class GasStationEntity {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+
 }

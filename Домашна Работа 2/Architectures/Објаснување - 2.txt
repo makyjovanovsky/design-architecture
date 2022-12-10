@@ -1,0 +1,14 @@
+Register Controller - Register Service - Register Repository
+	При регистрирање на корисник, Register Controller ќе го прими барањето од MVC Controller и ќе го препрати на 
+	Register Service. Во овој сервис, ќе се проверува валидноста на информациите и ќе се зачуваат информациите во
+	база. Register Repository ќе го врши зачувувањето на податоците во базата.
+Login Controller - Login Service - Login Repository
+	При најава на корисник, Login Controller ќе го прими барањето од MVC Controller и ќе го препрати на 
+	Login Service. Во овој сервис, ќе се направи автентикација и авторизација на корисникот, при што
+	Login Repository ќе се користи за да се добијат информациите од базата. Сето ова ќе е овозможено со помош на
+	Spring Security
+Search Controller - Search Service - Search Repository
+	При пребарување на бензински пумпи за некој град, Search Controller ќе го прими барањето од MVC Controller
+	и ќе го препрати на Searh Service. Во овој сервис, ќе е главната бизнис логика за апликацијата. Ќе се врши
+	селектирање на бензинските пумпи за соодвениот град и самите информации за нив. Повлекувањето на податоци ќе се
+	изврши со помош на Searh Repository.
