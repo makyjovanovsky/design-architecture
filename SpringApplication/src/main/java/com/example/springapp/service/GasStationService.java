@@ -32,4 +32,8 @@ public class GasStationService {
         }
         return new ArrayList<>(set);
     }
+
+    public List<GasStationEntity> findAllGasStationsInCity(String city) {
+        return gasStationRepository.findAllByCity(city);
+    }
 }

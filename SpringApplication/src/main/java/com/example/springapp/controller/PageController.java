@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.stream.Collectors;
+
 @Controller
 public class PageController {
 
@@ -22,7 +24,7 @@ public class PageController {
 
     @GetMapping("/userDashboard")
     public String getUserDashboardPage(Model model) {
-        model.addAttribute("stations", gasStationService.getAllStations());
+        model.addAttribute("stations", gasStationService.getAllStations().stream().sorted().collect(Collectors.toList()));
         return "user-dashboard";
     }
 
@@ -30,4 +32,5 @@ public class PageController {
     public String getLoginPage() {
         return "login";
     }
+
 }

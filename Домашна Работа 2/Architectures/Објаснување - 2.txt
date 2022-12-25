@@ -12,3 +12,8 @@ Search Controller - Search Service - Search Repository
 	и ќе го препрати на Searh Service. Во овој сервис, ќе е главната бизнис логика за апликацијата. Ќе се врши
 	селектирање на бензинските пумпи за соодвениот град и самите информации за нив. Повлекувањето на податоци ќе се
 	изврши со помош на Searh Repository.
+
+Технологии кои што се користат:
+	Frontend - Bootstrap,Apache Freemarker
+	Backend - Spring Framework
+	Database - Postgres
