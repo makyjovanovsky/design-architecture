@@ -1,0 +1,4 @@
+Целосната апликација се наоѓа во фолдерот SpringApplication.
+За mail server се користи сликата maildev/maildev од Docker Hub.
+Команда за стартување на Mail server: docker run -p 1080:1080 -p 1025:1025 maildev/maildev.
+Во овој фолдер е поставено видео, каде се прикажани сите функционалности на апликацијата.

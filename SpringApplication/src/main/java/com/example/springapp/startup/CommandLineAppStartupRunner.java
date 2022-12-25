@@ -14,7 +14,7 @@ import java.io.FileReader;
 @Component
 public class CommandLineAppStartupRunner implements CommandLineRunner {
 
-    private final String FILE_PATH = "D:\\Semestar V\\Dizajn i arhitektura na softver\\Labaratoriski Vezbi\\design-architecture\\dataset.csv";
+    private final String STATIONS_PATH = "D:\\Semestar V\\Dizajn i arhitektura na softver\\Labaratoriski Vezbi\\design-architecture\\dataset.csv";
     private final GasStationService gasStationService;
     private final UserService userService;
 
@@ -26,7 +26,7 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE_PATH));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(STATIONS_PATH));
 
         Pipe<String> pipe = new Pipe<>();
         FilterDropColumn filterDropColumn = new FilterDropColumn();
@@ -37,21 +37,22 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
         while ((line = bufferedReader.readLine()) != null) {
             if (flag) {
                 String output = pipe.runFilter(line);
-                String name = output.split("\\|")[0];
+                String city = output.split("\\|")[0];
                 String location = output.split("\\|")[1];
                 String working_hours = output.split("\\|")[2];
                 String phone_number = output.split("\\|")[3];
-                String city = output.split("\\|")[4];
-                gasStationService.saveGasStation(new GasStationEntity(name, location, working_hours, phone_number, city));
+                double latitude = Double.parseDouble(output.split("\\|")[4]);
+                double longitude = Double.parseDouble(output.split("\\|")[5]);
+                if (latitude != 0.0 || longitude != 0.0) {
+                    gasStationService.saveGasStation(new GasStationEntity(city, location, working_hours, phone_number, latitude, longitude));
+                }
             } else {
                 flag = true;
             }
 
         }
-
         bufferedReader.close();
 
-        userService.registerNewUser("Mladen", "Jovanovski", "admin@gmail.com", "admin");
 
     }
 
