@@ -1,0 +1,4 @@
+Во springmicroservice и springmicroservice2 се наоѓа истата апликација направена со микросервисна архитектура.
+Во апликацијата недостасува само mail confirmation, бидејќи Heroku не нуди бесплатни услуги за тој дел.
+
+Линк до апликацијата: https://makpetrol.herokuapp.com/register
